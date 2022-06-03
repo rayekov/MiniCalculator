@@ -1,7 +1,6 @@
 # MiniCalculator
 
-### A mini Calculator
-<br/>
+### A Calculator with a 2 Line Display
 
 ### Description :
 Designed using windows forms <br/>
