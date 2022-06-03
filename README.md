@@ -7,7 +7,7 @@
 Designed using windows forms <br/>
 It's a work in progress.  ;-)
 
-You can have an actual UI screenshot below : 
+You can have an actual screenshot below : 
 
 ![Screenshot](/preview/preview.png)
 
