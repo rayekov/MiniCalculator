@@ -306,12 +306,12 @@
             // 
             this.labelDisplay.AutoSize = true;
             this.labelDisplay.BackColor = System.Drawing.SystemColors.Info;
-            this.labelDisplay.Font = new System.Drawing.Font("Unispace", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.labelDisplay.Font = new System.Drawing.Font("Unispace", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.labelDisplay.ForeColor = System.Drawing.Color.IndianRed;
             this.labelDisplay.Location = new System.Drawing.Point(12, 69);
             this.labelDisplay.Name = "labelDisplay";
             this.labelDisplay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelDisplay.Size = new System.Drawing.Size(39, 19);
+            this.labelDisplay.Size = new System.Drawing.Size(31, 15);
             this.labelDisplay.TabIndex = 20;
             this.labelDisplay.Text = "...";
             this.labelDisplay.TextAlign = System.Drawing.ContentAlignment.BottomRight;
