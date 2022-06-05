@@ -57,10 +57,19 @@ namespace MiniCalculator
                     break;
 
                 case "/":
-                    if (Convert.ToInt64(txtBoxDisplay.Text) == 0)
-                        throw new Exception("Cannot divide by zero");
+                    try
+                    {if (Convert.ToInt64(txtBoxDisplay.Text) == 0)
+                        throw new Exception("MATH ERROR : Cannot divide by zero");
 
-                    txtBoxDisplay.Text = (displayValue / double.Parse(txtBoxDisplay.Text)).ToString();
+                        txtBoxDisplay.Text = (displayValue / double.Parse(txtBoxDisplay.Text)).ToString();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        txtBoxDisplay.Clear();
+                        labelDisplay.Text = ex.Message;
+                    }
+                    
                     break;
             }
          
