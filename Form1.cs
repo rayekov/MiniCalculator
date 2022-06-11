@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace MiniCalculator
 {
     public partial class Calculator : Form
@@ -8,7 +10,10 @@ namespace MiniCalculator
         public Calculator()
         {
             InitializeComponent();
+           // set the globalization to en-US
+            CultureInfo.CurrentCulture = new CultureInfo("en-US", false);
         }
+
         private void btnDigit_Click(object sender, EventArgs e)
         {
             if (txtBoxDisplay.Text == "0" || _)
@@ -30,10 +35,11 @@ namespace MiniCalculator
             operatorValue = "0";
             labelDisplay.Text = null;
         }
-        private void btnOperator_click(object sender, EventArgs e)
+        private void btnOperator_click( object sender, EventArgs e )
         {
             Button button = (Button)sender;
             operatorValue = button.Text;
+
             displayValue = double.Parse(txtBoxDisplay.Text);
             _ = true;
             labelDisplay.Text = displayValue + "" + operatorValue;
@@ -58,14 +64,19 @@ namespace MiniCalculator
 
                 case "/":
                     try
-                    {if (Convert.ToInt64(txtBoxDisplay.Text) == 0)
-                        throw new Exception("MATH ERROR : Cannot divide by zero");
+                    {
+                        //  if the user tries to divide by zero, an exception is thrown
+                        if (Convert.ToInt64(txtBoxDisplay.Text) == 0) 
+                        {
+                            throw new Exception("MATH ERROR : Cannot divide by zero");
+                        }
 
                         txtBoxDisplay.Text = (displayValue / double.Parse(txtBoxDisplay.Text)).ToString();
 
                     }
                     catch (Exception ex)
                     {
+                        // we catch the exception and show the error message on the screen
                         txtBoxDisplay.Clear();
                         labelDisplay.Text = ex.Message;
                     }
