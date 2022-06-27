@@ -49,6 +49,8 @@
             this.btnDigit0 = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelDisplay = new System.Windows.Forms.Label();
+            this.buttonSqrt = new System.Windows.Forms.Button();
+            this.buttonModulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -317,12 +319,38 @@
             this.labelDisplay.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.labelDisplay.UseWaitCursor = true;
             // 
+            // buttonSqrt
+            // 
+            this.buttonSqrt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonSqrt.Location = new System.Drawing.Point(60, 102);
+            this.buttonSqrt.Name = "buttonSqrt";
+            this.buttonSqrt.Size = new System.Drawing.Size(51, 41);
+            this.buttonSqrt.TabIndex = 21;
+            this.buttonSqrt.Text = "sqrt";
+            this.buttonSqrt.UseVisualStyleBackColor = true;
+            this.buttonSqrt.UseWaitCursor = true;
+            this.buttonSqrt.Click += new System.EventHandler(this.btnOperator_click);
+            // 
+            // buttonModulo
+            // 
+            this.buttonModulo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonModulo.Location = new System.Drawing.Point(3, 103);
+            this.buttonModulo.Name = "buttonModulo";
+            this.buttonModulo.Size = new System.Drawing.Size(51, 41);
+            this.buttonModulo.TabIndex = 24;
+            this.buttonModulo.Text = "%";
+            this.buttonModulo.UseVisualStyleBackColor = true;
+            this.buttonModulo.UseWaitCursor = true;
+            this.buttonModulo.Click += new System.EventHandler(this.btnOperator_click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(302, 376);
+            this.Controls.Add(this.buttonModulo);
+            this.Controls.Add(this.buttonSqrt);
             this.Controls.Add(this.labelDisplay);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.btnDigit0);
@@ -378,5 +406,7 @@
         private Button btnDigit0;
         private PictureBox pictureBoxLogo;
         private Label labelDisplay;
+        private Button buttonSqrt;
+        private Button buttonModulo;
     }
 }
