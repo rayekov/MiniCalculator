@@ -40,9 +40,19 @@ namespace MiniCalculator
             Button button = (Button)sender;
             operatorValue = button.Text;
 
-            displayValue = double.Parse(txtBoxDisplay.Text);
-            _ = true;
-            labelDisplay.Text = displayValue + "" + operatorValue;
+            //if "-" operator is pressed in order to enter a negative number, show "-" on screen
+            if (operatorValue=="-" && txtBoxDisplay.Text=="0")
+            {
+                txtBoxDisplay.Text = "-";
+            }
+            else
+            {
+                displayValue = double.Parse(txtBoxDisplay.Text);
+                _ = true;
+                labelDisplay.Text = displayValue + "" + operatorValue;
+            }
+
+            
         }
         private void btnOperatorEqual_click(object sender, EventArgs e)
         {
@@ -55,6 +65,7 @@ namespace MiniCalculator
                     break;
 
                 case "-":
+                    
                     txtBoxDisplay.Text = (displayValue - double.Parse(txtBoxDisplay.Text)).ToString();
                     break;
 
@@ -82,10 +93,39 @@ namespace MiniCalculator
                     }
                     
                     break;
+                case "%":
+                    txtBoxDisplay.Text = (displayValue % double.Parse(txtBoxDisplay.Text)).ToString();
+                    break;
+
+                case "sqrt":
+                    try
+                    {
+                        if (double.Parse(txtBoxDisplay.Text) < 0)
+                        {
+                            throw new Exception("MATH ERROR: Only positive numbers");
+                        }
+                        string typedNumber = txtBoxDisplay.Text;
+                        txtBoxDisplay.Text = Math.Sqrt(double.Parse(txtBoxDisplay.Text)).ToString();
+                        labelDisplay.Text = "Sqrt(" + typedNumber + ")";
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        // we catch the exception and show the error message on the screen
+                        txtBoxDisplay.Clear();
+                        labelDisplay.Text = ex.Message;
+                    }
+                    
+                    break;
+
+                default:
+                    txtBoxDisplay.Clear();
+                    labelDisplay.Text = "SYSTEM FAILURE : UNKNOWN OPERATION";
+                    break;
             }
          
             
         }
-       
     }
 }
